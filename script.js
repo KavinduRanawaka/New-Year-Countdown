@@ -9,7 +9,15 @@ function countdown(){
     const minutes = Math.floor(totalSeconds/60)%60;
     const seconds = Math.floor(totalSeconds)%60;
 
-    document.getElementById
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=timeFormat(hours);
+    document.getElementById("minutes").innerHTML=timeFormat(minutes);
+    document.getElementById("seconds").innerHTML=timeFormat(seconds);
 
 }
-countdown();
+
+function timeFormat(time){
+    return time < 10 ? `0${time}` : time;
+}
+
+setInterval(countdown,1000);
